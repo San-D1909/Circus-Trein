@@ -11,7 +11,7 @@ namespace UnitTest_CircusTrein
         [TestMethod]
         public void Create_Animals()
         {
-            List<Animal> animals = Animal.Create_Animals_List(100);
+            List<Animal> animals = AnimalMethods.Create_Animals_List(100);
             Assert.IsTrue(animals.Count == 100);
         }
         [TestMethod]
@@ -20,27 +20,27 @@ namespace UnitTest_CircusTrein
             List<Wagon> wagons = new List<Wagon> { };
             for (int i = 0; i < 10; i++)
             {
-                wagons = Wagon.Create_Wagons(wagons);
+                wagons.Add(new Wagon { Wagon_Number = wagons.Count });
             }
             Assert.IsTrue(wagons.Count == 10);
         }
         [TestMethod]
         public void Check_If_Safe_For_Same_Size_Animals()
         {
-            Animal lion = Animal.Create_Animal(0, 2, 1);
-            Animal giraffe = Animal.Create_Animal(1, 2, 0);
+            Animal lion = new Animal {Carnivorous= true, Name = "Lion", Weight = 5 };
+            Animal giraffe = new Animal { Carnivorous = false, Name = "giraffe", Weight = 5 };
             Wagon wagon = new Wagon { Free_Space = 10, Wagon_Number = 0 };
-            Wagon.Add_To_Wagon(lion, wagon);
-            Assert.IsFalse(Wagon.Check_If_Safe(giraffe, wagon));
+            WagonMethods.Add_To_Wagon(lion, wagon);
+            Assert.IsFalse(WagonMethods.Check_If_Safe(giraffe, wagon));
         }
         [TestMethod]
         public void Check_Small_Carnivorous_With_Big_Herbivore()
         {
-            Animal cat = Animal.Create_Animal(0, 0, 1);
-            Animal giraffe = Animal.Create_Animal(1,2, 0);
+            Animal cat = new Animal { Carnivorous = true, Name = "cat", Weight = 1 };
+            Animal giraffe = new Animal { Carnivorous = false, Name = "giraffe", Weight = 5 };
             Wagon wagon = new Wagon { Free_Space = 10, Wagon_Number = 0 };
-            Wagon.Add_To_Wagon(cat, wagon);
-            Assert.IsTrue(Wagon.Add_To_Wagon(giraffe, wagon));
+            WagonMethods.Add_To_Wagon(cat, wagon);
+            Assert.IsTrue(WagonMethods.Add_To_Wagon(giraffe, wagon));
         }
     }
 }
