@@ -11,7 +11,8 @@ namespace UnitTest_CircusTrein
         [TestMethod]
         public void Create_Animals()
         {
-            List<Animal> animals = AnimalMethods.Create_Animals_List(100);
+            Train train = new Train { };
+            List<Animal> animals = train.Create_Animals_List(100);
             Assert.IsTrue(animals.Count == 100);
         }
         [TestMethod]
@@ -29,18 +30,18 @@ namespace UnitTest_CircusTrein
         {
             Animal lion = new Animal {Carnivorous= true, Name = "Lion", Weight = 5 };
             Animal giraffe = new Animal { Carnivorous = false, Name = "giraffe", Weight = 5 };
-            Wagon wagon = new Wagon { Free_Space = 10, Wagon_Number = 0 };
-            WagonMethods.Add_To_Wagon(lion, wagon);
-            Assert.IsFalse(WagonMethods.Check_If_Safe(giraffe, wagon));
+            Wagon wagon = new Wagon {  Wagon_Number = 0 };
+            wagon.Add_To_Wagon(lion);
+            Assert.IsFalse(wagon.Check_If_Safe(giraffe));
         }
         [TestMethod]
         public void Check_Small_Carnivorous_With_Big_Herbivore()
         {
             Animal cat = new Animal { Carnivorous = true, Name = "cat", Weight = 1 };
             Animal giraffe = new Animal { Carnivorous = false, Name = "giraffe", Weight = 5 };
-            Wagon wagon = new Wagon { Free_Space = 10, Wagon_Number = 0 };
-            WagonMethods.Add_To_Wagon(cat, wagon);
-            Assert.IsTrue(WagonMethods.Add_To_Wagon(giraffe, wagon));
+            Wagon wagon = new Wagon {  Wagon_Number = 0 };
+            wagon.Add_To_Wagon(cat);
+            Assert.IsTrue(wagon.Add_To_Wagon(giraffe));
         }
     }
 }
