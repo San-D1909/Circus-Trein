@@ -8,7 +8,7 @@ namespace CircusTrein
         static void Main(string[] args)
         {
             Train train = new Train { };
-            train.Fill_Train(10);
+            train.StartTrain(10);
             Console.ReadLine();
         }
     }

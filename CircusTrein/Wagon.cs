@@ -21,31 +21,31 @@ namespace CircusTrein
         {
             return "Wagon Number: " + Wagon_Number + "    Animals: " + Animals.Count + "  Free Space: " + Free_Space;
         }
-        public bool Check_If_Space(Animal animal)
+        public bool CheckIfSpace(Animal animal)
         {
-            if (Free_Space >= animal.Weight)
+            if (Free_Space >= (int)animal.weight)
             {
                 return true;
             }
             return false;
         }
-        public bool Check_If_Safe(Animal animal)
+        public bool CheckIfSafe(Animal animal)
         {
-            if (animal.Carnivorous == false && Animals.Count > 0)
+            if (animal.diet == Animal.Diet.Herbivours && Animals.Count > 0)
             {
                 for (int i = 0; i < Animals.Count; i++)
                 {
-                    if (Animals[i].Carnivorous == true && Animals[i].Weight >= animal.Weight)
+                    if (Animals[i].diet == Animal.Diet.Carnivours && Animals[i].weight >= animal.weight)
                     {
                         return false;
                     }
                 }
             }
-            if (animal.Carnivorous == true && Animals.Count > 0)
+            if (animal.diet == Animal.Diet.Carnivours && Animals.Count > 0)
             {
                 for (int i = 0; i < Animals.Count; i++)
                 {
-                    if (Animals[i].Carnivorous == true || Animals[i].Weight <= animal.Weight)
+                    if (Animals[i].diet == Animal.Diet.Carnivours || Animals[i].weight <= animal.weight)
                     {
                         return false;
                     }
@@ -53,15 +53,15 @@ namespace CircusTrein
             }
             return true;
         }
-        public bool Add_To_Wagon(Animal animal)
+        public bool AddToWagon(Animal animal)
         {
-            if (Check_If_Space(animal))
+            if (CheckIfSpace(animal))
             {
-                if (Check_If_Safe(animal))
+                if (CheckIfSafe(animal))
                 {
                     Console.WriteLine(animal.Name + " has been added to wagon: " + Wagon_Number);
                     Animals.Add(animal);
-                    Free_Space = Free_Space - animal.Weight;
+                    Free_Space = Free_Space - (int)animal.weight;
                     return true;
                 }
             }
