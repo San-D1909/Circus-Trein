@@ -12,8 +12,7 @@ namespace CircusTrein
             List<Wagon> wagons = train.StartTrain(10);
             foreach(Wagon wagon in wagons)
             {
-                Console.WriteLine(train.ToStringAnimalCreated(wagon));
-                Console.WriteLine(train.ToStringWagon(wagon));
+                Console.WriteLine(train.ToString(wagon));
                 foreach(Animal animal in wagon.Animals)
                 {
                     animalcount++;

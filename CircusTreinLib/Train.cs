@@ -6,18 +6,9 @@ namespace CircusTrein
 {
     public class Train
     {
-        public string ToStringAnimalCreated(Wagon wagon)
+        public string ToString(Wagon wagon)
         {
-            string text = "";
-            foreach (Animal animal in wagon.Animals)
-            {
-                text = text + animal.Name + " has been added to wagon: " + wagon.Wagon_Number + "\n";
-            }
-            return text;
-        }
-        public string ToStringWagon(Wagon wagon)
-        {
-            return "Wagon Number: " + wagon.Wagon_Number + "    Animals: " + wagon.Animals.Count + "  Free Space: " + wagon.Free_Space + "\n";
+            return "Wagon Number: " + wagon.Wagon_Number + "    Animals: " + wagon.Animals.Count + "  Free Space: " + wagon.Free_Space;
         }
         public List<Wagon> StartTrain(int count)
         {
