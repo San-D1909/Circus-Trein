@@ -6,19 +6,28 @@ namespace CircusTrein
 {
     public class Train
     {
-        public bool StartTrain(int count)
+        public string ToStringAnimalCreated(Wagon wagon)
+        {
+            string text = "";
+            foreach (Animal animal in wagon.Animals)
+            {
+                text = text + animal.Name + " has been added to wagon: " + wagon.Wagon_Number + "\n";
+            }
+            return text;
+        }
+        public string ToStringWagon(Wagon wagon)
+        {
+            return "Wagon Number: " + wagon.Wagon_Number + "    Animals: " + wagon.Animals.Count + "  Free Space: " + wagon.Free_Space + "\n";
+        }
+        public List<Wagon> StartTrain(int count)
         {
             List<Animal> animals = CreateAnimalsList(count);
             List<Wagon> wagons = new List<Wagon>();
-            AddAnimalsToWagons(animals, wagons);
-            foreach (Wagon wagon in wagons)
-            {
-                Console.WriteLine(wagon.ToString());
-            }
-            Console.WriteLine("Total wagons needed: " + wagons.Count + " For a total of: " + animals.Count + " Animals");
-            return true;
+            wagons = AddAnimalsToWagons(animals, wagons);
+
+            return wagons;
         }
-        public void AddAnimalsToWagons(List<Animal> animals, List<Wagon> wagons)
+        public List<Wagon> AddAnimalsToWagons(List<Animal> animals, List<Wagon> wagons)
         {
             wagons.Add(new Wagon { Wagon_Number = wagons.Count() });
             foreach (Animal animal in animals)
@@ -29,14 +38,15 @@ namespace CircusTrein
                     {
                         break;
                     }
-                    if (i  == wagons.Count-1)
+                    if (i == wagons.Count - 1)
                     {
                         wagons.Add(new Wagon { Wagon_Number = wagons.Count() });
                         wagons[i + 1].AddToWagon(animal);
-                        break;                       
+                        break;
                     }
                 }
             }
+            return wagons;
         }
         public List<Animal> CreateAnimalsList(int count)
         {

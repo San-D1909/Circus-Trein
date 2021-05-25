@@ -1,0 +1,6 @@
+C:\School\Leerjaar 1\Software\Semester 2\CircusTrein\CircusTrein\Circus-Trein\CircusTreinLib\bin\Debug\CircusTreinLib.dll
+C:\School\Leerjaar 1\Software\Semester 2\CircusTrein\CircusTrein\Circus-Trein\CircusTreinLib\bin\Debug\CircusTreinLib.pdb
+C:\School\Leerjaar 1\Software\Semester 2\CircusTrein\CircusTrein\Circus-Trein\CircusTreinLib\obj\Debug\CircusTreinLib.csprojAssemblyReference.cache
+C:\School\Leerjaar 1\Software\Semester 2\CircusTrein\CircusTrein\Circus-Trein\CircusTreinLib\obj\Debug\CircusTreinLib.csproj.CoreCompileInputs.cache
+C:\School\Leerjaar 1\Software\Semester 2\CircusTrein\CircusTrein\Circus-Trein\CircusTreinLib\obj\Debug\CircusTreinLib.dll
+C:\School\Leerjaar 1\Software\Semester 2\CircusTrein\CircusTrein\Circus-Trein\CircusTreinLib\obj\Debug\CircusTreinLib.pdb

@@ -32,3 +32,5 @@ C:\School\Leerjaar 1\Software\Semester 2\CircusTrein\CircusTrein\Circus-Trein\Un
 C:\School\Leerjaar 1\Software\Semester 2\CircusTrein\CircusTrein\Circus-Trein\UnitTest-CircusTrein\obj\Debug\UnitTest-CircusTrein.csproj.CopyComplete
 C:\School\Leerjaar 1\Software\Semester 2\CircusTrein\CircusTrein\Circus-Trein\UnitTest-CircusTrein\obj\Debug\UnitTest-CircusTrein.dll
 C:\School\Leerjaar 1\Software\Semester 2\CircusTrein\CircusTrein\Circus-Trein\UnitTest-CircusTrein\obj\Debug\UnitTest-CircusTrein.pdb
+C:\School\Leerjaar 1\Software\Semester 2\CircusTrein\CircusTrein\Circus-Trein\UnitTest-CircusTrein\bin\Debug\CircusTreinLib.dll
+C:\School\Leerjaar 1\Software\Semester 2\CircusTrein\CircusTrein\Circus-Trein\UnitTest-CircusTrein\bin\Debug\CircusTreinLib.pdb

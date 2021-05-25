@@ -17,10 +17,6 @@ namespace CircusTrein
         private int free_Space = 10;
         public List<Animal> Animals { get; private set; } = new List<Animal>();
 
-        public override string ToString()
-        {
-            return "Wagon Number: " + Wagon_Number + "    Animals: " + Animals.Count + "  Free Space: " + Free_Space;
-        }
         public bool CheckIfSpace(Animal animal)
         {
             if (Free_Space >= (int)animal.weight)
@@ -59,7 +55,6 @@ namespace CircusTrein
             {
                 if (CheckIfSafe(animal))
                 {
-                    Console.WriteLine(animal.Name + " has been added to wagon: " + Wagon_Number);
                     Animals.Add(animal);
                     Free_Space = Free_Space - (int)animal.weight;
                     return true;

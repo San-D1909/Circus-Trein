@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CircusTreinLib\CircusTreinLib.csproj">
+      <Project>{eca0719d-0992-49ae-892b-198478c12690}</Project>
+      <Name>CircusTreinLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CircusTrein\CircusTrein.csproj">
       <Project>{0257bb3f-b9b9-42f1-834d-f580ca6dfae1}</Project>
       <Name>CircusTrein</Name>

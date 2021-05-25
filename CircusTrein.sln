@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircusTrein", "CircusTrein\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest-CircusTrein", "UnitTest-CircusTrein\UnitTest-CircusTrein.csproj", "{9EE4EC12-2A74-4AF5-AC0E-6214A0AEE0A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircusTreinLib", "CircusTreinLib\CircusTreinLib.csproj", "{ECA0719D-0992-49AE-892B-198478C12690}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9EE4EC12-2A74-4AF5-AC0E-6214A0AEE0A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EE4EC12-2A74-4AF5-AC0E-6214A0AEE0A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EE4EC12-2A74-4AF5-AC0E-6214A0AEE0A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECA0719D-0992-49AE-892B-198478C12690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA0719D-0992-49AE-892B-198478C12690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA0719D-0992-49AE-892B-198478C12690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA0719D-0992-49AE-892B-198478C12690}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

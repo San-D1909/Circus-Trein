@@ -7,8 +7,19 @@ namespace CircusTrein
     {
         static void Main(string[] args)
         {
+            int animalcount = 0;
             Train train = new Train { };
-            train.StartTrain(10);
+            List<Wagon> wagons = train.StartTrain(10);
+            foreach(Wagon wagon in wagons)
+            {
+                Console.WriteLine(train.ToStringAnimalCreated(wagon));
+                Console.WriteLine(train.ToStringWagon(wagon));
+                foreach(Animal animal in wagon.Animals)
+                {
+                    animalcount++;
+                }
+            }
+            Console.WriteLine("Total wagons needed: " + wagons.Count + " For a total of: " + animalcount + " Animals");
             Console.ReadLine();
         }
     }
