@@ -9,54 +9,29 @@ namespace CircusTrein
     public class Wagon
     {
         public int Wagon_Number { get; set; }
-        public int Free_Space
+        public int FreeSpace
         {
-            get { return free_Space; }
-            private set { free_Space = value; }
+            get
+            {
+                int space = freeSpace;
+                foreach (Animal animal in Animals)
+                {
+                    space = space - animal.getWeight;
+                }
+                return space;
+            }
+            private set { freeSpace = value; }
         }
-        private int free_Space = 10;
+        private int freeSpace = 10;
         public List<Animal> Animals { get; private set; } = new List<Animal>();
 
-        public bool CheckIfSpace(Animal animal)
-        {
-            if (Free_Space >= (int)animal.weight)
-            {
-                return true;
-            }
-            return false;
-        }
-        public bool CheckIfSafe(Animal animal)
-        {
-            if (animal.diet == Animal.Diet.Herbivours && Animals.Count > 0)
-            {
-                for (int i = 0; i < Animals.Count; i++)
-                {
-                    if (Animals[i].diet == Animal.Diet.Carnivours && Animals[i].weight >= animal.weight)
-                    {
-                        return false;
-                    }
-                }
-            }
-            if (animal.diet == Animal.Diet.Carnivours && Animals.Count > 0)
-            {
-                for (int i = 0; i < Animals.Count; i++)
-                {
-                    if (Animals[i].diet == Animal.Diet.Carnivours || Animals[i].weight <= animal.weight)
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
         public bool AddToWagon(Animal animal)
         {
-            if (CheckIfSpace(animal))
+            if (FreeSpace > animal.getWeight)
             {
-                if (CheckIfSafe(animal))
+                if (animal.IsSafe(Animals))
                 {
                     Animals.Add(animal);
-                    Free_Space = Free_Space - (int)animal.weight;
                     return true;
                 }
             }

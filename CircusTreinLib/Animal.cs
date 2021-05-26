@@ -10,6 +10,10 @@ namespace CircusTrein
     {
         public string Name { get; set; }
         public Weight weight { get; set; }
+        public int getWeight 
+        {
+            get { return (int)weight; }
+        }
         public enum Weight
         {
             Large = 5,
@@ -21,6 +25,17 @@ namespace CircusTrein
         {
             Herbivours,
             Carnivours
+        }
+        public bool IsSafe(List<Animal> animals)
+        {
+            foreach (Animal animal in animals)
+            {
+                if ((diet == Animal.Diet.Carnivours && weight >= animal.weight)||(animal.diet == Animal.Diet.Carnivours&&animal.weight>=weight))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

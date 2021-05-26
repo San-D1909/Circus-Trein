@@ -7,18 +7,11 @@ namespace UnitTestCircusTrein
     [TestClass]
     public class UnitTestCircusTrein
     {
-        private Train train = new Train { };
         private List<Wagon> wagons = new List<Wagon> { };
         Wagon wagon = new Wagon { Wagon_Number = 0 };
         private readonly Animal lion = new Animal { diet = Animal.Diet.Carnivours, Name = "Lion", weight = Animal.Weight.Large };
         private readonly Animal giraffe = new Animal { diet = Animal.Diet.Herbivours, Name = "giraffe", weight = Animal.Weight.Large };
         private readonly Animal cat = new Animal { diet = Animal.Diet.Carnivours, Name = "cat", weight = Animal.Weight.Small };
-        [TestMethod]
-        public void CreateAnimals()
-        {
-            List<Animal> animals = train.CreateAnimalsList(100);
-            Assert.IsTrue(animals.Count == 100);
-        }
         [TestMethod]
         public void CreateAnimal()
         {
@@ -38,7 +31,7 @@ namespace UnitTestCircusTrein
         public void SameSizeAnimals()
         {
             wagon.AddToWagon(lion);
-            Assert.IsFalse(wagon.CheckIfSafe(giraffe));
+            Assert.IsFalse(giraffe.IsSafe(wagon.Animals));
         }
         [TestMethod]
         public void SmallCarnivorousWithBigHerbivore()
@@ -51,7 +44,7 @@ namespace UnitTestCircusTrein
         {
             wagon.AddToWagon(giraffe);
             wagon.AddToWagon(cat);
-            Assert.IsFalse(wagon.CheckIfSpace(giraffe));
+            Assert.IsFalse(wagon.AddToWagon(giraffe));
         }
     }
 }
