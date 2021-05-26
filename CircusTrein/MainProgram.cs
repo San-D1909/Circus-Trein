@@ -12,6 +12,7 @@ namespace CircusTrein
             PrintMethod(wagons, animals, train);
             Console.ReadLine();
         }
+
         public static void PrintMethod(List<Wagon> wagons, List<Animal> animals, Train train)
         {
             foreach (Wagon Trainpart in wagons)
@@ -24,7 +25,7 @@ namespace CircusTrein
                 {
                     if (animal.weight == Animal.Weight.Medium)
                     {
-                        Console.WriteLine($"  == Animal: {animal.Name}   Weight: {animal.weight}    Diet: {animal.diet} ==");
+                        Console.WriteLine($"  == Animal: {animal.Name}   Weight: {animal.weight}   Diet: {animal.diet}  ==");
                     }
                     else
                     {
@@ -34,7 +35,6 @@ namespace CircusTrein
                 Console.WriteLine($"  ==             (Total FreeSpace: {Trainpart.Free_Space })               ==");
                 Console.WriteLine("  ====================== ooooo =======================");
             }
-
             foreach (Wagon wagon in wagons)
             {
                 Console.WriteLine(train.ToString(wagon));
