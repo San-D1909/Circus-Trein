@@ -8,25 +8,36 @@ namespace CircusTrein
         static void Main()
         {
             Train train = new Train { };
-            (List<Wagon> wagons,List<Animal> animals) = train.StartTrain(10);
-            PrintMethod(wagons,animals,train);
+            (List<Wagon> wagons, List<Animal> animals) = train.StartTrain(10);
+            PrintMethod(wagons, animals, train);
             Console.ReadLine();
         }
-        public static void PrintMethod(List<Wagon> wagons,List<Animal>animals, Train train)
+        public static void PrintMethod(List<Wagon> wagons, List<Animal> animals, Train train)
         {
-            foreach (Wagon wagon in wagons)
+            foreach (Wagon Trainpart in wagons)
             {
-                foreach (Animal animal in wagon.Animals)
+                Console.WriteLine("            ||             0            ||        ");
+                Console.WriteLine("            ||-------------0------------||        ");
+                Console.WriteLine("            ||             0            ||        ");
+                Console.WriteLine("  ====================== ooooo =======================");
+                foreach (Animal animal in Trainpart.Animals)
                 {
-                    foreach(Animal animalx in animals)
+                    if (animal.weight == Animal.Weight.Medium)
                     {
-                        if(animal.Name == animalx.Name)
-                        {
-                            Console.WriteLine("Animal "+ animalx.Name + " has been added to wagon: " + wagon.Wagon_Number);
-                        }
+                        Console.WriteLine($"  == Animal: {animal.Name}   Weight: {animal.weight}    Diet: {animal.diet} ==");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"  == Animal: {animal.Name}   Weight: {animal.weight}    Diet: {animal.diet}  ==");
                     }
                 }
-                Console.WriteLine(train.ToString(wagon)+"\n");
+                Console.WriteLine($"  ==             (Total FreeSpace: {Trainpart.Free_Space })               ==");
+                Console.WriteLine("  ====================== ooooo =======================");
+            }
+
+            foreach (Wagon wagon in wagons)
+            {
+                Console.WriteLine(train.ToString(wagon));
             }
             Console.WriteLine("Total wagons needed: " + wagons.Count + " For a total of: " + animals.Count + " Animals");
         }

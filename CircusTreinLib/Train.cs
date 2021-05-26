@@ -16,7 +16,7 @@ namespace CircusTrein
             List<Wagon> wagons = new List<Wagon>();
             wagons = AddAnimalsToWagons(animals, wagons);
 
-            return (wagons,animals);
+            return (wagons, animals);
         }
         public List<Wagon> AddAnimalsToWagons(List<Animal> animals, List<Wagon> wagons)
         {
