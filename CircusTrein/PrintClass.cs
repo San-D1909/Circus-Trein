@@ -25,7 +25,10 @@ namespace CircusTrein
                 Console.WriteLine($"  ==             (Total FreeSpace: {Trainpart.FreeSpace })               ==");
                 Console.WriteLine("  ====================== ooooo =======================");
             }
-            Console.WriteLine("\n Total wagons needed: " + wagons.Count + " For a total of: " + animals.Count + " Animals");
+            Console.WriteLine("            ||             0            ||        ");
+            Console.WriteLine("            ||-------------0------------||        ");
+            Console.WriteLine("            ||             0            ||        ");
+            Console.WriteLine("Total wagons needed: " + wagons.Count + " For a total of: " + animals.Count + " Animals");
         }
     }
 }

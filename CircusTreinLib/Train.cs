@@ -8,11 +8,6 @@ namespace CircusTrein
     {
         public List<Wagon> StartTrain(List<Animal> animals)
         {
-            List<Wagon> wagons = AddAnimalsToWagons(animals);
-            return wagons;
-        }
-        public List<Wagon> AddAnimalsToWagons(List<Animal> animals)
-        {
             List<Wagon> wagons = new List<Wagon> { new Wagon { Wagon_Number = 0 } };
             foreach (Animal animal in animals)
             {
