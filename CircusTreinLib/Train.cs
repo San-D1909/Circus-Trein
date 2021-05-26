@@ -10,13 +10,13 @@ namespace CircusTrein
         {
             return "Wagon Number: " + wagon.Wagon_Number + "    Animals: " + wagon.Animals.Count + "  Free Space: " + wagon.Free_Space;
         }
-        public List<Wagon> StartTrain(int count)
+        public (List<Wagon>, List<Animal>) StartTrain(int count)
         {
             List<Animal> animals = CreateAnimalsList(count);
             List<Wagon> wagons = new List<Wagon>();
             wagons = AddAnimalsToWagons(animals, wagons);
 
-            return wagons;
+            return (wagons,animals);
         }
         public List<Wagon> AddAnimalsToWagons(List<Animal> animals, List<Wagon> wagons)
         {
