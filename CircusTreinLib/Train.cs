@@ -41,10 +41,10 @@ namespace CircusTrein
         {
             List<Animal> animals = new List<Animal> { };
             Random random = new Random { };
-            for (int i = 0; i < count; i++) { animals.Add(CreateRandomAnimal(i, random.Next(0, 3), random.Next(0, 2))); }
+            for (int i = 0; i < count; i++) { animals.Add(CreateAnimal(i, random.Next(0, 3), random.Next(0, 2))); }
             return animals;
         }
-        public Animal CreateRandomAnimal(int name, int weight, int diet)
+        public Animal CreateAnimal(int name, int weight, int diet)
         {
             Animal animal = new Animal { Name = Convert.ToString(name) };
             switch (weight)
