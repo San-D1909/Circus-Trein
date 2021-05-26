@@ -22,7 +22,7 @@ namespace UnitTestCircusTrein
         [TestMethod]
         public void CreateAnimal()
         {
-            Animal wolf = train.CreateAnimal(0, 1, 1);
+            Animal wolf = new Animal { diet = Animal.Diet.Carnivours, weight = Animal.Weight.Medium };
             Assert.IsTrue(wolf.weight == Animal.Weight.Medium && wolf.diet == Animal.Diet.Carnivours);
         }
         [TestMethod]
