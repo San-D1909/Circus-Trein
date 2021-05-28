@@ -20,9 +20,8 @@ namespace CircusTrein
                 }
                 return space;
             }
-            private set { freeSpace = value; }
         }
-        private int freeSpace = 10;
+        private readonly int freeSpace = 10;
         public List<Animal> Animals { get; private set; } = new List<Animal>();
 
         public bool AddToWagon(Animal animal)
