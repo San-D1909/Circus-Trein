@@ -26,7 +26,7 @@ namespace CircusTrein
 
         public bool AddToWagon(Animal animal)
         {
-            if (FreeSpace > animal.getWeight)
+            if (FreeSpace >= animal.getWeight)
             {
                 if (animal.IsSafe(Animals))
                 {

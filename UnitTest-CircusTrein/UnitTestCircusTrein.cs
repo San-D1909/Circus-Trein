@@ -40,11 +40,17 @@ namespace UnitTestCircusTrein
             Assert.IsTrue(wagon.AddToWagon(giraffe));
         }
         [TestMethod]
-        public void CheckIfSpace()
+        public void OverFillWagon()
         {
             wagon.AddToWagon(giraffe);
-            wagon.AddToWagon(cat);
-            Assert.IsFalse(wagon.AddToWagon(giraffe));
+            wagon.AddToWagon(giraffe);
+            Assert.IsFalse(wagon.AddToWagon(cat));
+        }
+        [TestMethod]
+        public void MaxSpaceTest()
+        {
+            wagon.AddToWagon(giraffe);
+            Assert.IsTrue(wagon.AddToWagon(giraffe));
         }
     }
 }
